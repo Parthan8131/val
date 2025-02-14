@@ -237,3 +237,12 @@ html {
     margin-bottom: 15px;
   }
 }
+
+.valentine-question {
+  display: flex;
+  justify-content: center; /* Centers buttons horizontally */
+  align-items: center;     /* Centers buttons vertically */
+  gap: 10px;                /* Adds space between buttons */
+  height: 200px;           /* Adjusts the height as needed */
+}
+
