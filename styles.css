@@ -81,7 +81,7 @@ h2 {
 }
 
 /* Rectangular Boxes */
-.chess-theme, .poetry, .languages, .interactive, .gift-section {
+.chess-theme, .poetry, .languages, .interactive, .valentine-question {
   padding: 30px;
   margin: 20px auto;
   background-color: white;
@@ -91,21 +91,21 @@ h2 {
 
 .chess-board {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start; /* Changed to start alignment */
   margin-top: 20px;
 }
 
 .chess-piece {
   width: 100px;
   transition: transform 0.6s ease, opacity 1s ease-in-out;
-  opacity: 0;
+  opacity: 1;  /* Set opacity to 1 to show images normally */
   margin: 0 20px;
 }
 
-/* Knight and Rook move towards each other */
-.chess-piece.move {
-  transform: translateX(100px);
-  opacity: 1;
+.love-emoji {
+  font-size: 2.5em;
+  margin: 0 20px;
+  align-self: center;
 }
 
 blockquote {
@@ -155,16 +155,30 @@ button:hover {
   font-family: 'Roboto', monospace;
 }
 
-#rose-love-container {
+#heart-cry-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 20px;
+  position: relative;
+  z-index: 10;
 }
 
-.rose-love {
+.heart-cry {
   font-size: 30px;
   margin: 5px;
+  animation: fadeOut 2s forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
 }
 
 footer {
@@ -185,4 +199,41 @@ footer p {
 /* Add a smooth scroll effect for links */
 html {
   scroll-behavior: smooth;
+}
+
+/* Center the "Click Me!" button */
+.interactive-box {
+  text-align: center;
+}
+
+#surprise-btn {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #ff4f6c;
+  color: white;
+  font-size: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+#surprise-btn:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .love-emoji {
+    font-size: 2em;
+  }
+
+  .chess-board {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .chess-piece {
+    margin-bottom: 15px;
+  }
 }
