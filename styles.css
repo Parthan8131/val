@@ -81,7 +81,7 @@ h2 {
 }
 
 /* Rectangular Boxes */
-.chess-theme, .poetry, .languages, .interactive, .valentine-question {
+.chess-theme, .poetry, .languages, .interactive, .gift-section {
   padding: 30px;
   margin: 20px auto;
   background-color: white;
@@ -91,7 +91,7 @@ h2 {
 
 .chess-board {
   display: flex;
-  justify-content: flex-start; /* Changed to start alignment */
+  justify-content: center;
   margin-top: 20px;
 }
 
@@ -102,10 +102,10 @@ h2 {
   margin: 0 20px;
 }
 
-.love-emoji {
-  font-size: 2.5em;
-  margin: 0 20px;
-  align-self: center;
+/* Knight and Rook move towards each other */
+.chess-piece.move {
+  transform: translateX(100px);
+  opacity: 1;
 }
 
 blockquote {
@@ -155,14 +155,14 @@ button:hover {
   font-family: 'Roboto', monospace;
 }
 
-#heart-cry-container {
+#rose-love-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 20px;
 }
 
-.heart-cry {
+.rose-love {
   font-size: 30px;
   margin: 5px;
 }
