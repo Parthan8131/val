@@ -38,13 +38,6 @@ function createCryAnimation() {
   }, 2000);
 }
 
-// Trigger heart pop-up when "Click Me!" is clicked
-document.getElementById('surprise-btn').addEventListener('click', function() {
-  for (let i = 0; i < 50; i++) {
-    setTimeout(createHeartAnimation, i * 100);  // Add slight delay for effect
-  }
-});
-
 // Trigger heart and crying animations based on button clicks
 document.getElementById('yes-btn').addEventListener('click', function() {
   for (let i = 0; i < 50; i++) {
@@ -57,3 +50,15 @@ document.getElementById('no-btn').addEventListener('click', function() {
     setTimeout(createCryAnimation, i * 100);  // Add slight delay for effect
   }
 });
+
+// Animate Knight and Rook
+window.onload = function() {
+  const knight = document.getElementById('knight');
+  const rook = document.getElementById('rook');
+  
+  // Wait for the page to load, then move the pieces
+  setTimeout(() => {
+    knight.classList.add('move');
+    rook.classList.add('move');
+  }, 1000);
+};
