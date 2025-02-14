@@ -1,42 +1,59 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Floating hearts animation
-  function createHeart() {
-    const heart = document.createElement("div");
-    heart.classList.add("heart");
-    heart.innerHTML = "❤️";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = Math.random() * 3 + 2 + "s";
-    document.getElementById("heart-container").appendChild(heart);
-    setTimeout(() => heart.remove(), 5000);
-  }
-  setInterval(createHeart, 500);
+// Heart pop-up animation effect
+function createHeartAnimation() {
+  const heart = document.createElement('div');
+  heart.classList.add('heart-cry');
+  heart.textContent = '❤️';
+  document.getElementById('heart-cry-container').appendChild(heart);
 
-  // Chess animation
+  // Set a random position for the heart
+  const randomX = Math.random() * window.innerWidth;
+  const randomY = Math.random() * window.innerHeight;
+
+  heart.style.left = `${randomX}px`;
+  heart.style.top = `${randomY}px`;
+
+  // Remove the heart after the animation is complete
   setTimeout(() => {
-    document.getElementById("knight").classList.add("move");
-    document.getElementById("rook").classList.add("move");
-  }, 1000);
+    heart.remove();
+  }, 2000);
+}
 
-  // Play background music on first interaction
-  document.body.addEventListener("click", function () {
-    document.getElementById("bg-music").play();
-  }, { once: true });
+// Crying emoji pop-up animation effect
+function createCryAnimation() {
+  const cry = document.createElement('div');
+  cry.classList.add('heart-cry');
+  cry.textContent = '😢';
+  document.getElementById('heart-cry-container').appendChild(cry);
 
-  // Surprise button functionality
-  document.getElementById("surprise-btn").addEventListener("click", function () {
-    document.getElementById("code-output").textContent = "Love is the most beautiful code of all! ❤️";
-  });
+  // Set a random position for the cry
+  const randomX = Math.random() * window.innerWidth;
+  const randomY = Math.random() * window.innerHeight;
 
-  // Show hidden love note on gift button click
-  document.getElementById("gift-btn").addEventListener("click", function () {
-    document.getElementById("love-note").style.display = "block";
-  });
+  cry.style.left = `${randomX}px`;
+  cry.style.top = `${randomY}px`;
 
-  // Easter egg feature
-  document.querySelector(".main-title").addEventListener("mouseover", function () {
-    this.textContent = "Forever Yours ❤️";
-  });
-  document.querySelector(".main-title").addEventListener("mouseout", function () {
-    this.textContent = "To My Love 💖";
-  });
+  // Remove the cry after the animation is complete
+  setTimeout(() => {
+    cry.remove();
+  }, 2000);
+}
+
+// Trigger heart pop-up when "Click Me!" is clicked
+document.getElementById('surprise-btn').addEventListener('click', function() {
+  for (let i = 0; i < 50; i++) {
+    setTimeout(createHeartAnimation, i * 100);  // Add slight delay for effect
+  }
+});
+
+// Trigger heart and crying animations based on button clicks
+document.getElementById('yes-btn').addEventListener('click', function() {
+  for (let i = 0; i < 50; i++) {
+    setTimeout(createHeartAnimation, i * 100);  // Add slight delay for effect
+  }
+});
+
+document.getElementById('no-btn').addEventListener('click', function() {
+  for (let i = 0; i < 50; i++) {
+    setTimeout(createCryAnimation, i * 100);  // Add slight delay for effect
+  }
 });
