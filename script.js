@@ -38,6 +38,12 @@ function createCryAnimation() {
   }, 2000);
 }
 
+document.getElementById('playMusicButton').addEventListener('click', function() {
+  var audio = document.getElementById('backgroundMusic');
+  audio.play();
+  this.style.display = 'none'; // Hide the play button after clicking
+});
+
 // Trigger heart pop-up when "Click Me!" is clicked
 document.getElementById('surprise-btn').addEventListener('click', function() {
   document.getElementById('code-box').innerText = "Our love is the best output of gods coding";
