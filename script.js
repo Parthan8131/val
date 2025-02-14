@@ -1,60 +1,42 @@
-// Heart pop-up animation effect
-function createHeartAnimation() {
-  const heart = document.createElement('div');
-  heart.classList.add('love-heart');
-  heart.textContent = '❤️';
-  document.body.appendChild(heart);
+document.addEventListener("DOMContentLoaded", function () {
+  // Floating hearts animation
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+    document.getElementById("heart-container").appendChild(heart);
+    setTimeout(() => heart.remove(), 5000);
+  }
+  setInterval(createHeart, 500);
 
-  // Set a random position for the heart
-  const randomX = Math.random() * window.innerWidth;
-  const randomY = Math.random() * window.innerHeight;
-
-  heart.style.left = `${randomX}px`;
-  heart.style.top = `${randomY}px`;
-
-  // Remove the heart after the animation is complete
+  // Chess animation
   setTimeout(() => {
-    heart.remove();
-  }, 2000);
-}
-
-// Trigger heart animation at random intervals
-setInterval(createHeartAnimation, 300);
-
-// Animate Knight and Rook
-window.onload = function() {
-  const knight = document.getElementById('knight');
-  const rook = document.getElementById('rook');
-  
-  // Wait for the page to load, then move the pieces
-  setTimeout(() => {
-    knight.classList.add('move');
-    rook.classList.add('move');
+    document.getElementById("knight").classList.add("move");
+    document.getElementById("rook").classList.add("move");
   }, 1000);
 
-  // Surprise button interaction
-  document.getElementById('surprise-btn').addEventListener('click', function() {
-    document.getElementById('surprise-message').innerText = "You are my perfect match, just like a knight and rook on the chessboard!";
-    
-    // Displaying code in the interactive section
-    let codeOutput = document.getElementById('code-output');
-    codeOutput.innerHTML = `
-      <code>const myLove = "❤️";</code><br>
-      <code>console.log("To my love: " + myLove);</code><br>
-      <code>output: "To my love: ❤️"</code>
-    `;
+  // Play background music on first interaction
+  document.body.addEventListener("click", function () {
+    document.getElementById("bg-music").play();
+  }, { once: true });
+
+  // Surprise button functionality
+  document.getElementById("surprise-btn").addEventListener("click", function () {
+    document.getElementById("code-output").textContent = "Love is the most beautiful code of all! ❤️";
   });
 
-  // "Click Me for Your Gift" button interaction
-  document.getElementById('gift-btn').addEventListener('click', function() {
-    const roseLoveContainer = document.getElementById('rose-love-container');
-    
-    // Create a random number of roses and love emojis
-    let emojis = '';
-    for (let i = 0; i < 20; i++) {
-      emojis += '🌹❤️ ';
-    }
-    
-    roseLoveContainer.innerHTML = emojis; // Display emojis
+  // Show hidden love note on gift button click
+  document.getElementById("gift-btn").addEventListener("click", function () {
+    document.getElementById("love-note").style.display = "block";
   });
-};
+
+  // Easter egg feature
+  document.querySelector(".main-title").addEventListener("mouseover", function () {
+    this.textContent = "Forever Yours ❤️";
+  });
+  document.querySelector(".main-title").addEventListener("mouseout", function () {
+    this.textContent = "To My Love 💖";
+  });
+});
