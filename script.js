@@ -40,9 +40,7 @@ function createCryAnimation() {
 
 // Trigger heart pop-up when "Click Me!" is clicked
 document.getElementById('surprise-btn').addEventListener('click', function() {
-  for (let i = 0; i < 50; i++) {
-    setTimeout(createHeartAnimation, i * 100);  // Add slight delay for effect
-  }
+  document.getElementById('code-box').innerText = "Our love is the best output of gods coding";
 });
 
 // Trigger heart and crying animations based on button clicks
