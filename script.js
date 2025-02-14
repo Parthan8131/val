@@ -44,4 +44,17 @@ window.onload = function() {
       <code>output: "To my love: ❤️"</code>
     `;
   });
+
+  // "Click Me for Your Gift" button interaction
+  document.getElementById('gift-btn').addEventListener('click', function() {
+    const roseLoveContainer = document.getElementById('rose-love-container');
+    
+    // Create a random number of roses and love emojis
+    let emojis = '';
+    for (let i = 0; i < 20; i++) {
+      emojis += '🌹❤️ ';
+    }
+    
+    roseLoveContainer.innerHTML = emojis; // Display emojis
+  });
 };
