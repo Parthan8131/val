@@ -4,64 +4,63 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Valentine's Day Gift</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <audio id="bg-music" src="love-song.mp3" loop></audio>
-  <div id="heart-container"></div>
-  
-  <header class="header fade-in">
+  <header class="header">
     <div class="header-content">
       <h1 class="main-title">To My Love 💖</h1>
       <p class="header-description">Our journey together is a beautiful game of chess, and you're my knight in shining armor.</p>
     </div>
   </header>
 
-  <section class="chess-theme fade-in">
+  <section class="chess-theme">
     <h2 class="section-title">Love story of a Rook and Knight</h2>
     <p class="section-description">Just like a knight and rook, we complement each other perfectly in this game of life.</p>
     <div class="chess-board">
       <img src="knight.png" alt="Knight" class="chess-piece" id="knight">
+      <span class="love-emoji">❤️</span> <!-- Love Emoji between Knight and Rook -->
       <img src="rook.png" alt="Rook" class="chess-piece" id="rook">
     </div>
   </section>
 
-  <section class="poetry fade-in">
+  <section class="poetry">
     <h2 class="section-title">As you say in Poetry</h2>
-    <blockquote class="fancy-text">
+    <blockquote>
       "In dreams, we can live forever, and the world is only as far as we want it to be."
       <br>— Anonymous
     </blockquote>
   </section>
 
-  <section class="languages fade-in">
-    <h2 class="section-title">Our Love in Languages</h2>
+  <section class="languages">
+    <h2 class="section-title">Our Love</h2>
     <div class="language-block">
       <p>Our love is infinite, just like the chessboard.</p>
-      <p><strong>Hindi:</strong> मेरा प्यार अनंत है, जैसे यह खेल! ❤️</p>
-      <p><strong>Malayalam:</strong> എന്റെ സ്നേഹം അളവറ്റതാണ്, ചതുരംഗത്തിനെപ്പോലെ! ❤️</p>
     </div>
   </section>
 
-  <section class="interactive fade-in">
+  <section class="interactive">
     <h2 class="section-title">Interactive Coding Gift</h2>
     <p class="interactive-description">Click the button below to run some code that shows how much I care for you!</p>
-    <button id="surprise-btn">Click Me!</button>
-    <div id="code-box">
-      <pre id="code-output"></pre>
+    <div class="interactive-box">
+      <button id="surprise-btn">Click Me!</button>
+      <div id="code-box">
+        <pre id="code-output"></pre>
+      </div>
     </div>
   </section>
 
-  <section class="gift-section fade-in">
-    <h2 class="section-title">Click me for your gift 💝</h2>
-    <button id="gift-btn">Click Me!</button>
-    <div id="rose-love-container"></div>
-    <p id="love-note" class="hidden-message">You are my everything. I love you more than words can say! ❤️</p>
+  <!-- New Section: Will You Be My Valentine -->
+  <section class="valentine-question">
+    <h2 class="section-title">Will you be my Valentine?</h2>
+    <button id="yes-btn">Yes 💖</button>
+    <button id="no-btn">No 😢</button>
+    <div id="heart-cry-container"></div>
   </section>
 
   <footer>
-    <p>Created with ❤️ by You</p>
+    <p>Created with ❤️ by [Your Name]</p>
   </footer>
 
   <script src="script.js"></script>
