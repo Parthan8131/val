@@ -246,3 +246,10 @@ html {
   height: 200px;           /* Adjusts the height as needed */
 }
 
+.question-line {
+  border: none;
+  border-top: 2px solid #ff69b4; /* Pink color */
+  margin: 10px 0; /* Adds space above and below the line */
+}
+
+
