@@ -80,16 +80,13 @@ h2 {
   margin-bottom: 30px;
 }
 
-/* Love-shaped boxes */
-.chess-theme, .poetry, .languages, .interactive {
+/* Rectangular Boxes */
+.chess-theme, .poetry, .languages, .interactive, .gift-section {
   padding: 30px;
   margin: 20px auto;
   background-color: white;
   max-width: 900px;
-  border-radius: 50% 50% 0 0;
-  clip-path: polygon(50% 0%, 100% 35%, 80% 100%, 20% 100%, 0% 35%);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  position: relative;
 }
 
 .chess-board {
@@ -156,6 +153,18 @@ button:hover {
   margin-top: 20px;
   border-radius: 8px;
   font-family: 'Roboto', monospace;
+}
+
+#rose-love-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.rose-love {
+  font-size: 30px;
+  margin: 5px;
 }
 
 footer {
