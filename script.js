@@ -38,6 +38,13 @@ function createCryAnimation() {
   }, 2000);
 }
 
+// Trigger heart pop-up when "Click Me!" is clicked
+document.getElementById('surprise-btn').addEventListener('click', function() {
+  for (let i = 0; i < 50; i++) {
+    setTimeout(createHeartAnimation, i * 100);  // Add slight delay for effect
+  }
+});
+
 // Trigger heart and crying animations based on button clicks
 document.getElementById('yes-btn').addEventListener('click', function() {
   for (let i = 0; i < 50; i++) {
