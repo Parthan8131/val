@@ -9,6 +9,33 @@ body {
   font-family: 'Poppins', sans-serif;
   background-color: #f0f0f0;
   color: #333;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Love Background Animation */
+@keyframes love-background {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.love-heart {
+  position: absolute;
+  animation: love-background 2s ease-in-out infinite;
+  color: #ff4f6c;
+  font-size: 3em;
+  opacity: 0;
+  pointer-events: none;
 }
 
 header {
@@ -59,6 +86,7 @@ h2 {
   max-width: 900px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .chess-board {
@@ -69,11 +97,14 @@ h2 {
 
 .chess-piece {
   width: 100px;
-  transition: transform 0.3s ease;
+  transition: transform 0.6s ease, opacity 1s ease-in-out;
+  opacity: 0;
 }
 
-.chess-piece:hover {
-  transform: scale(1.1);
+/* Knight and Rook move towards each other */
+.chess-piece.move {
+  transform: translateX(100px);
+  opacity: 1;
 }
 
 blockquote {
