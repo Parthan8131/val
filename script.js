@@ -1,35 +1,60 @@
-// Function to create a heart animation
+// Heart pop-up animation effect
 function createHeartAnimation() {
   const heart = document.createElement('div');
   heart.classList.add('love-heart');
   heart.textContent = '❤️';
+  document.body.appendChild(heart);
 
-  // Position the heart randomly
+  // Set a random position for the heart
   const randomX = Math.random() * window.innerWidth;
   const randomY = Math.random() * window.innerHeight;
 
   heart.style.left = `${randomX}px`;
   heart.style.top = `${randomY}px`;
 
-  // Append the heart to the love-background div
-  document.getElementById('love-background').appendChild(heart);
-
-  // Remove heart after animation ends
+  // Remove the heart after the animation is complete
   setTimeout(() => {
     heart.remove();
-  }, 3000); // Matches the animation duration
+  }, 2000);
 }
 
-// Trigger heart pop-up when "Click Me!" button is clicked
-document.getElementById('gift-btn').addEventListener('click', function() {
-  for (let i = 0; i < 50; i++) {
-    setTimeout(createHeartAnimation, i * 100);  // Adding slight delay for effect
-  }
-});
+// Trigger heart animation at random intervals
+setInterval(createHeartAnimation, 300);
 
-// Trigger heart pop-up on button clicks (Yes/No buttons)
-document.getElementById('surprise-btn').addEventListener('click', function() {
-  for (let i = 0; i < 50; i++) {
-    setTimeout(createHeartAnimation, i * 100);  // Adding slight delay for effect
-  }
-});
+// Animate Knight and Rook
+window.onload = function() {
+  const knight = document.getElementById('knight');
+  const rook = document.getElementById('rook');
+  
+  // Wait for the page to load, then move the pieces
+  setTimeout(() => {
+    knight.classList.add('move');
+    rook.classList.add('move');
+  }, 1000);
+
+  // Surprise button interaction
+  document.getElementById('surprise-btn').addEventListener('click', function() {
+    document.getElementById('surprise-message').innerText = "You are my perfect match, just like a knight and rook on the chessboard!";
+    
+    // Displaying code in the interactive section
+    let codeOutput = document.getElementById('code-output');
+    codeOutput.innerHTML = `
+      <code>const myLove = "❤️";</code><br>
+      <code>console.log("To my love: " + myLove);</code><br>
+      <code>output: "To my love: ❤️"</code>
+    `;
+  });
+
+  // "Click Me for Your Gift" button interaction
+  document.getElementById('gift-btn').addEventListener('click', function() {
+    const roseLoveContainer = document.getElementById('rose-love-container');
+    
+    // Create a random number of roses and love emojis
+    let emojis = '';
+    for (let i = 0; i < 20; i++) {
+      emojis += '🌹❤️ ';
+    }
+    
+    roseLoveContainer.innerHTML = emojis; // Display emojis
+  });
+};
