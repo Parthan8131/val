@@ -201,6 +201,28 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Center the "Click Me!" button */
+.interactive-box {
+  text-align: center;
+}
+
+#surprise-btn {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #ff4f6c;
+  color: white;
+  font-size: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+#surprise-btn:hover {
+  transform: scale(1.05);
+}
+
 @media (max-width: 768px) {
   .love-emoji {
     font-size: 2em;
