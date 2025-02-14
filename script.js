@@ -50,15 +50,3 @@ document.getElementById('no-btn').addEventListener('click', function() {
     setTimeout(createCryAnimation, i * 100);  // Add slight delay for effect
   }
 });
-
-// Animate Knight and Rook
-window.onload = function() {
-  const knight = document.getElementById('knight');
-  const rook = document.getElementById('rook');
-  
-  // Wait for the page to load, then move the pieces
-  setTimeout(() => {
-    knight.classList.add('move');
-    rook.classList.add('move');
-  }, 1000);
-};
