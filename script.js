@@ -1,64 +1,35 @@
-// Heart pop-up animation effect
+// Function to create a heart animation
 function createHeartAnimation() {
   const heart = document.createElement('div');
-  heart.classList.add('heart-cry');
+  heart.classList.add('love-heart');
   heart.textContent = '❤️';
-  document.getElementById('heart-cry-container').appendChild(heart);
 
-  // Set a random position for the heart
+  // Position the heart randomly
   const randomX = Math.random() * window.innerWidth;
   const randomY = Math.random() * window.innerHeight;
 
   heart.style.left = `${randomX}px`;
   heart.style.top = `${randomY}px`;
 
-  // Remove the heart after the animation is complete
+  // Append the heart to the love-background div
+  document.getElementById('love-background').appendChild(heart);
+
+  // Remove heart after animation ends
   setTimeout(() => {
     heart.remove();
-  }, 2000);
+  }, 3000); // Matches the animation duration
 }
 
-// Crying emoji pop-up animation effect
-function createCryAnimation() {
-  const cry = document.createElement('div');
-  cry.classList.add('heart-cry');
-  cry.textContent = '😢';
-  document.getElementById('heart-cry-container').appendChild(cry);
-
-  // Set a random position for the cry
-  const randomX = Math.random() * window.innerWidth;
-  const randomY = Math.random() * window.innerHeight;
-
-  cry.style.left = `${randomX}px`;
-  cry.style.top = `${randomY}px`;
-
-  // Remove the cry after the animation is complete
-  setTimeout(() => {
-    cry.remove();
-  }, 2000);
-}
-
-// Trigger heart and crying animations based on button clicks
-document.getElementById('yes-btn').addEventListener('click', function() {
+// Trigger heart pop-up when "Click Me!" button is clicked
+document.getElementById('gift-btn').addEventListener('click', function() {
   for (let i = 0; i < 50; i++) {
-    setTimeout(createHeartAnimation, i * 100);  // Add slight delay for effect
+    setTimeout(createHeartAnimation, i * 100);  // Adding slight delay for effect
   }
 });
 
-document.getElementById('no-btn').addEventListener('click', function() {
+// Trigger heart pop-up on button clicks (Yes/No buttons)
+document.getElementById('surprise-btn').addEventListener('click', function() {
   for (let i = 0; i < 50; i++) {
-    setTimeout(createCryAnimation, i * 100);  // Add slight delay for effect
+    setTimeout(createHeartAnimation, i * 100);  // Adding slight delay for effect
   }
 });
-
-// Animate Knight and Rook
-window.onload = function() {
-  const knight = document.getElementById('knight');
-  const rook = document.getElementById('rook');
-  
-  // Wait for the page to load, then move the pieces
-  setTimeout(() => {
-    knight.classList.add('move');
-    rook.classList.add('move');
-  }, 1000);
-};
