@@ -238,14 +238,6 @@ html {
   }
 }
 
-.valentine-question {
-  display: flex;
-  justify-content: center; /* Centers buttons horizontally */
-  align-items: center;     /* Centers buttons vertically */
-  gap: 10px;                /* Adds space between buttons */
-  height: 200px;           /* Adjusts the height as needed */
-}
-
 .question-line {
   border: none;
   border-top: 2px solid #ff69b4; /* Pink color */
